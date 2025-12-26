@@ -14,6 +14,7 @@ import QuillToolbar, {
   onSelect,
   placeholderDropDownData,
   redoChange,
+  selectFontSize,
   setAlignment,
   undoChange,
 } from "./QuillToolbar";
@@ -51,18 +52,25 @@ const ReactQuill = dynamic(
       "28px",
       "36px",
       "48px",
+      "56px",
       "72px",
     ];
 
     Font.whitelist = [
-      "arial",
-      "adventPro",
-      "timesNewRoman",
-      "courierNew",
-      "georgia",
-      "verdana",
-      "helvetica",
-      "openSans",
+      "Rubik",
+      "OpenSans",
+      "AdventPro",
+      "Anybody",
+      "Montserrat",
+      "CormorantGaramond",
+      "AlbertSans",
+      "JosefinSlab",
+      "AzeretMono",
+      "CrimsonPro",
+      "Georama",
+      "Inter",
+      "Mali",
+      "Nunito",
     ];
 
     Quill.register(Size, true);
@@ -161,7 +169,6 @@ const CustomQuillEditor = ({
         container: `#${toolbarId}`,
         handlers: {
           header: function (value) {
-            console.log("asd code is here at top");
             const range = this.quill.getSelection();
             console.log("range", range);
             if (!range) return;
@@ -240,9 +247,6 @@ const CustomQuillEditor = ({
           customLineBreak: function () {
             onLineBreakButtonClick.call(this, toolbarRef.current);
           },
-          size: function (value) {
-            onFontSizeChange.call(this, toolbarRef.current);
-          },
           undo: function () {
             undoChange.call(this);
           },
@@ -301,139 +305,6 @@ const CustomQuillEditor = ({
 
   return (
     <div className="w-full">
-      <style jsx global>{`
-        .ql-font-arial {
-          font-family: Arial, sans-serif;
-        }
-        .ql-font-timesNewRoman {
-          font-family: "Times New Roman", serif;
-        }
-        .ql-font-courierNew {
-          font-family: "Courier New", monospace;
-        }
-        .ql-font-georgia {
-          font-family: Georgia, serif;
-        }
-        .ql-font-verdana {
-          font-family: Verdana, sans-serif;
-        }
-        .ql-font-helvetica {
-          font-family: Helvetica, sans-serif;
-        }
-        .ql-font-openSans {
-          font-family: "Open Sans", sans-serif;
-        }
-
-        .ql-editor .ql-font-arial {
-          font-family: Arial, sans-serif;
-        }
-        .ql-editor .ql-font-timesNewRoman {
-          font-family: "Times New Roman", serif;
-        }
-        .ql-editor .ql-font-courierNew {
-          font-family: "Courier New", monospace;
-        }
-        .ql-editor .ql-font-georgia {
-          font-family: Georgia, serif;
-        }
-        .ql-editor .ql-font-verdana {
-          font-family: Verdana, sans-serif;
-        }
-        .ql-editor .ql-font-helvetica {
-          font-family: Helvetica, sans-serif;
-        }
-        .ql-editor .ql-font-openSans {
-          font-family: "Open Sans", sans-serif;
-        }
-
-        .ql-editor .ql-size-8px {
-          font-size: 8px;
-        }
-        .ql-editor .ql-size-9px {
-          font-size: 9px;
-        }
-        .ql-editor .ql-size-10px {
-          font-size: 10px;
-        }
-        .ql-editor .ql-size-11px {
-          font-size: 11px;
-        }
-        .ql-editor .ql-size-12px {
-          font-size: 12px;
-        }
-        .ql-editor .ql-size-14px {
-          font-size: 14px;
-        }
-        .ql-editor .ql-size-16px {
-          font-size: 16px;
-        }
-        .ql-editor .ql-size-18px {
-          font-size: 18px;
-        }
-        .ql-editor .ql-size-20px {
-          font-size: 20px;
-        }
-        .ql-editor .ql-size-22px {
-          font-size: 22px;
-        }
-        .ql-editor .ql-size-24px {
-          font-size: 24px;
-        }
-        .ql-editor .ql-size-26px {
-          font-size: 26px;
-        }
-        .ql-editor .ql-size-28px {
-          font-size: 28px;
-        }
-        .ql-editor .ql-size-36px {
-          font-size: 36px;
-        }
-        .ql-editor .ql-size-48px {
-          font-size: 48px;
-        }
-        .ql-editor .ql-size-72px {
-          font-size: 72px;
-        }
-
-        #unique-quill-description-${editorId} > div > div.ql-editor > h1 {
-          font-size: ${fontStyles?.H1?.fontSize || "18px"} !important;
-          color: ${fontStyles?.H1?.fontColour || "#151515"} !important;
-        }
-        #unique-quill-description-${editorId} > div > div.ql-editor > h2 {
-          font-size: ${fontStyles?.H2?.fontSize || "16px"} !important;
-          color: ${fontStyles?.H2?.fontColour || "#151515"} !important;
-        }
-        #unique-quill-description-${editorId} > div > div.ql-editor > h3 {
-          font-size: ${fontStyles?.H3?.fontSize || "14px"} !important;
-          color: ${fontStyles?.H3?.fontColour || "#151515"} !important;
-        }
-        #unique-quill-description-${editorId} > div > div.ql-editor > p {
-          font-size: 14px !important;
-          color: #151515 !important;
-        }
-
-        .ql-snow .ql-picker.ql-size .ql-picker-label[data-value="8px"]::before,
-        .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="8px"]::before {
-          content: "8px";
-        }
-        .ql-snow .ql-picker.ql-size .ql-picker-label[data-value="14px"]::before,
-        .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="14px"]::before {
-          content: "14px";
-        }
-        .ql-snow .ql-picker.ql-size .ql-picker-label[data-value="18px"]::before,
-        .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="18px"]::before {
-          content: "18px";
-        }
-        .ql-snow .ql-picker.ql-size .ql-picker-label[data-value="24px"]::before,
-        .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="24px"]::before {
-          content: "24px";
-        }
-        .ql-snow .ql-picker.ql-size .ql-picker-label[data-value="36px"]::before,
-        .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="36px"]::before {
-          content: "36px";
-        }
-      `}</style>
-
       <QuillToolbar
         dropDownItems={combinedPlaceholders}
         conditionalDropDown={conditionalDropDown}

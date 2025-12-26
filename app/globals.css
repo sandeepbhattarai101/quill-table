@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "./fonts.css";
+@import "./quillstyle.css";
+
 :root {
   --background: #ffffff;
   --foreground: #bd2121;

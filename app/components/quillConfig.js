@@ -27,6 +27,7 @@ export const initializeQuill = async () => {
     "28px",
     "36px",
     "48px",
+    "56px",
     "72px",
   ];
 

@@ -3,7 +3,7 @@
 export function registerPlaceholderBlot() {
   if (typeof window === "undefined") return;
 
-  const { Quill } = require("react-quill");
+  const { Quill } = require("react-quill-new");
   const Embed = Quill.import("blots/embed");
 
   class PlaceholderBlot extends Embed {

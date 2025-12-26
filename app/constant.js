@@ -47,6 +47,7 @@ export const FONT_SIZE = [
   "36px",
   "48px",
   "56px",
+  "72px",
 ];
 
 export const FONT_LIST = [

@@ -1,0 +1,244 @@
+/* ---------------- Base Editor Styles ------------------ */
+.ql-toolbar.ql-snow {
+  font-family: var(--font-lexend), sans-serif !important;
+  display: flex;
+  gap: 2px;
+  row-gap: 4px;
+  flex-wrap: wrap;
+}
+
+.ql-toolbar.ql-snow .ql-formats {
+  margin: 0 !important;
+}
+
+.ql-container {
+  font-family: inherit !important;
+}
+
+.ql-toolbar .ql-formats button {
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 6px !important;
+  padding: 4px 6px !important;
+  height: 30px;
+  width: 30px;
+  margin: 0 2px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.ql-toolbar .ql-formats .ql-picker {
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 6px !important;
+  margin: 0 2px !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.ql-toolbar .ql-formats button:hover {
+  background-color: #f3f4f6 !important;
+}
+
+.ql-toolbar .ql-formats button.ql-active {
+  background-color: #e0e7ff !important;
+  border-color: #6366f1 !important;
+}
+#title-rich-text > div > div.ql-editor {
+  white-space: nowrap;
+}
+
+/* ---------------- Editor Typography ------------------ */
+.ql-snow .ql-editor h1,
+.ql-snow .ql-editor h2,
+.ql-snow .ql-editor h3 {
+  margin-bottom: 7px !important;
+  font-weight: 600;
+}
+
+.ql-snow .ql-editor p {
+  margin-bottom: 7px !important;
+}
+
+.ql-snow .ql-editor .page-break[data-page-break="true"] {
+  border: 2px dashed #ccc !important;
+  text-align: center !important;
+  padding: 10px !important;
+  margin: 10px 0 !important;
+  color: #666 !important;
+  background-color: #f9f9f9 !important;
+  cursor: pointer !important;
+  user-select: none !important;
+}
+
+.ql-editor .ql-size-8px {
+  font-size: 8px;
+}
+.ql-editor .ql-size-9px {
+  font-size: 9px;
+}
+.ql-editor .ql-size-10px {
+  font-size: 10px;
+}
+.ql-editor .ql-size-11px {
+  font-size: 11px;
+}
+.ql-editor .ql-size-12px {
+  font-size: 12px;
+}
+.ql-editor .ql-size-14px {
+  font-size: 14px;
+}
+.ql-editor .ql-size-16px {
+  font-size: 16px;
+}
+.ql-editor .ql-size-18px {
+  font-size: 18px;
+}
+.ql-editor .ql-size-20px {
+  font-size: 20px;
+}
+.ql-editor .ql-size-22px {
+  font-size: 22px;
+}
+.ql-editor .ql-size-24px {
+  font-size: 24px;
+}
+.ql-editor .ql-size-26px {
+  font-size: 26px;
+}
+.ql-editor .ql-size-28px {
+  font-size: 28px;
+}
+.ql-editor .ql-size-36px {
+  font-size: 36px;
+}
+.ql-editor .ql-size-48px {
+  font-size: 48px;
+}
+.ql-editor .ql-size-56px {
+  font-size: 56px;
+}
+.ql-editor .ql-size-72px {
+  font-size: 72px;
+}
+
+.ql-font-Rubik {
+  font-family: "Rubik", "Open Sans";
+}
+
+.ql-font-OpenSans {
+  font-family: "Open Sans", "Open Sans";
+}
+
+.ql-font-AdventPro {
+  font-family: "Advent Pro", "Open Sans";
+}
+
+.ql-font-Anybody {
+  font-family: "Anybody", "Open Sans";
+}
+
+.ql-font-Montserrat {
+  font-family: "Montserrat", "Open Sans";
+}
+
+.ql-font-CormorantGaramond {
+  font-family: "Cormorant Garamond", "Open Sans";
+}
+
+.ql-font-AlbertSans {
+  font-family: "Albert Sans", "Open Sans";
+}
+
+.ql-font-JosefinSlab {
+  font-family: "Josefin Slab", "Open Sans";
+}
+
+.ql-font-AzeretMono {
+  font-family: "Azeret Mono", "Open Sans";
+}
+
+.ql-font-CrimsonPro {
+  font-family: "Crimson Pro", "Open Sans";
+}
+
+.ql-font-Georama {
+  font-family: "Georama", "Open Sans";
+}
+
+.ql-font-Inter {
+  font-family: "Inter", "Open Sans";
+}
+
+.ql-font-Mali {
+  font-family: "Mali", "Open Sans";
+}
+
+.ql-font-Nunito {
+  font-family: "Nunito", "Open Sans";
+}
+
+/* ---------------- Mention Placeholder ------------------ */
+.mention-placeholder {
+  background-color: #d5e0ff;
+  padding: 0px 6px;
+  border-radius: 7px;
+  font-weight: 500;
+  color: #1e40af;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+/* ---------------- Custom Dropdowns ------------------ */
+.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-options {
+  height: max-content;
+  max-height: 350px;
+  width: fit-content;
+  overflow-y: scroll;
+  position: sticky;
+  right: 0;
+}
+
+.ql-toolbar.ql-snow .ql-picker.ql-expanded.ql-custom .ql-picker-options {
+  width: max-content;
+}
+
+.ql-toolbar.ql-snow .ql-picker-label {
+  width: 100% !important;
+  padding-right: 50px;
+  overflow: hidden;
+}
+
+.ql-picker.ql-custom,
+.ql-picker.ql-conditionalCustomDropDown {
+  width: 200px;
+  border: 1px solid grey;
+}
+
+.ql-picker.ql-custom .ql-picker-label::before,
+.ql-conditionalCustomDropDown .ql-picker-label::before,
+.ql-custom .ql-picker-item:before,
+.ql-conditionalCustomDropDown .ql-picker-item:before {
+  content: attr(data-label);
+  width: max-content;
+}
+
+.ql-snow .ql-picker-options .ql-picker-item {
+  font-family: attr(data-label), var(--font-lexend);
+}
+
+.ql-custom .ql-picker-options .ql-picker-item,
+.ql-conditionalCustomDropDown .ql-picker-options .ql-picker-item {
+  padding: 2px 4px;
+}
+
+.ql-custom .ql-picker-options .ql-picker-item[data-value=""],
+.ql-conditionalCustomDropDown
+  .ql-picker-options
+  .ql-picker-item[data-value=""] {
+  display: none;
+}

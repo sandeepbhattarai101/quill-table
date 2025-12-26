@@ -168,6 +168,9 @@ export function onFontSizeChange(toolbarNode) {
   const childSpan = selectedDiv.querySelector(".ql-picker-label");
   const dataValue = childSpan.getAttribute("data-value");
 
+  console.log("selectedDiv", selectedDiv);
+  console.log("childSpan", childSpan);
+  console.log("dataValue", dataValue);
   this.quill.format("size", dataValue);
 }
 
@@ -280,7 +283,7 @@ const QuillToolbar = ({
       <span className="ql-formats">
         <select
           className="ql-size"
-          defaultValue={"14px"}
+          defaultValue="14px"
           title="Change Font Size"
         >
           {FONT_SIZE.map((size) => (
