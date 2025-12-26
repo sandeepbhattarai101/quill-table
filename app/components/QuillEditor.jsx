@@ -20,9 +20,21 @@ import "react-quill/dist/quill.snow.css";
 //   undoChange,
 // } from "./QuillToolBar";
 
-import QuillToolbar, { placeholderDropDownData } from "./QuillToolbar";
+import QuillToolbar, {
+  changeFontSize,
+  onConditionalSelect,
+  onFontSizeChange,
+  onLineBreakButtonClick,
+  onPageBreakButtonClick,
+  onSelect,
+  placeholderDropDownData,
+  redoChange,
+  setAlignment,
+  undoChange,
+} from "./QuillToolbar";
 import { customPlaceholder, fontConfiguration, fontfamily } from "../constant";
 import { getStylesFromFontConfig } from "../(utils)/getStylesFromFontConfig";
+import { registerPlaceholderBlot } from "./placeholderblot";
 // import { useConfigStore } from "@/app/(store)/configStore";
 // import { registerPageBreakBlot } from "./pageBreakBolt";
 
@@ -59,12 +71,12 @@ const CustomQuillEditor = ({
   //   const getConfig = useConfigStore((state) => state.getConfig);
   //   const config = useConfigStore((state) => state.config);
 
-  //   useEffect(() => {
-  //     registerPlaceholderBlot();
-  //     registerFontSettings();
-  //     registerPageBreakBlot();
-  //     getConfig(); // Automatically fetch if not already loaded
-  //   }, []);
+  useEffect(() => {
+    registerPlaceholderBlot();
+    // registerFontSettings();
+    // registerPageBreakBlot();
+    // getConfig();
+  }, []);
 
   const combinedPlaceholders = useMemo(() => {
     const customPlaceholders =
