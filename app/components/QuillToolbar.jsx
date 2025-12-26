@@ -5,6 +5,7 @@ import {
   PlusIcon,
   Redo,
   Rows2,
+  Table2,
   Undo,
 } from "lucide-react";
 import { FONT_LIST, FONT_SIZE } from "../constant";
@@ -352,6 +353,11 @@ const QuillToolbar = ({
         <button className="ql-customLineBreak" title="Insert Line Break">
           <LineBreakIcon />
         </button>
+        <span className="ql-formats">
+          <button className="ql-tableBetter" title="Insert Table">
+            <Table2 />
+          </button>
+        </span>
       </span>
 
       {/* Placeholders */}
